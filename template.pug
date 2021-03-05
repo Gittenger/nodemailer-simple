@@ -1,0 +1,19 @@
+extends base
+
+block content
+   p Hi Camden,
+   p You have a new email from a client. 
+   table.btn.btn-primary(role='presentation', border='0', cellpadding='0', cellspacing='0')
+      tbody
+         tr
+            td(align='left')
+            table(role='presentation', border='0', cellpadding='0', cellspacing='0')
+               tbody
+                  tr
+                     td
+                        a(href=`${url}`, target='_blank') A Link Here if needed 
+   p Customer name: #{name}
+   p Customer email: #{email}
+   p Event description:
+   p #{desc}
+   p - Fantastic Flames
