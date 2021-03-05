@@ -9,14 +9,26 @@ app.set('views', __dirname)
 app.use(express.json())
 
 app.get('/sendEmail', async (req, res) => {
-	const { name, email, desc } = req.body
+	const { name, email, desc, sendCopy } = req.body
 
-	await new Email({ name, email, desc }).sendBooking()
+	if (name && email && desc) {
+		const mail = new Email({ name, email, desc })
+		const sent = await mail.sendBooking()
 
-	res.status(200).json({
-		status: 'success',
-		message: `attempted to send email with following params: ${name}, ${email}, ${desc}`,
-	})
+		if (sendCopy) {
+			const copy = await mail.sendCopy()
+		}
+
+		res.status(200).json({
+			status: 'success',
+			message: `attempted to send email with following params: ${name}, ${email}, ${desc}`,
+		})
+	} else {
+		res.status(400).json({
+			status: 'failed',
+			message: 'Name, email, and desc are required fields',
+		})
+	}
 })
 
 const port = process.env.PORT

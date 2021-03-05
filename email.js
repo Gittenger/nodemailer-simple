@@ -33,9 +33,9 @@ module.exports = class Email {
 		})
 	}
 
-	async send(template, subject) {
+	async send(template, subject, copy = false) {
 		//render html for email based on Pug template
-		const html = pug.renderFile(`${__dirname}/${template}.pug`, {
+		const html = pug.renderFile(`${__dirname}/views/${template}.pug`, {
 			name: this.name,
 			email: this.email,
 			desc: this.desc,
@@ -44,17 +44,21 @@ module.exports = class Email {
 		//define email options
 		const mailOptions = {
 			from: this.from,
-			to: process.env.MASTER_EMAIL,
+			to: copy ? this.email : process.env.MASTER_EMAIL,
 			subject,
 			html,
 			text: htmlToText(html),
 		}
 
 		//create transport and send email
-		await this.newTransport().sendMail(mailOptions)
+		return await this.newTransport().sendMail(mailOptions)
 	}
 
 	async sendBooking() {
-		await this.send('template', 'New email from your Fantastic Flames website')
+		return await this.send('main', 'New email from your Fantastic Flames website')
+	}
+
+	async sendCopy() {
+		return await this.send('copy', 'Your email to Fantastic Flames', true)
 	}
 }
