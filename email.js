@@ -8,6 +8,7 @@ module.exports = class Email {
 		this.name = formInfo.name
 		this.email = formInfo.email
 		this.desc = formInfo.desc
+		this.phone = formInfo.phone
 		this.from = `Fantastic Flames <${process.env.EMAIL_FROM}>`
 	}
 
@@ -39,6 +40,7 @@ module.exports = class Email {
 			name: this.name,
 			email: this.email,
 			desc: this.desc,
+			phone: this.phone,
 		})
 
 		//define email options

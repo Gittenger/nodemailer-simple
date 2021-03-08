@@ -1,5 +1,6 @@
 const express = require('express')
 const Email = require('./email')
+const cors = require('cors')
 require('dotenv').config()
 
 const app = express()
@@ -7,12 +8,13 @@ app.set('view engine', 'pug')
 app.set('views', __dirname)
 
 app.use(express.json())
+app.use(cors())
 
-app.get('/sendEmail', async (req, res) => {
-	const { name, email, desc, sendCopy } = req.body
+app.post('/sendEmail', async (req, res) => {
+	const { name, email, desc, phone, sendCopy } = req.body
 
-	if (name && email && desc) {
-		const mail = new Email({ name, email, desc })
+	if (name && email && desc && phone) {
+		const mail = new Email({ name, email, desc, phone })
 		const sent = await mail.sendBooking()
 
 		if (sendCopy) {
@@ -26,7 +28,7 @@ app.get('/sendEmail', async (req, res) => {
 	} else {
 		res.status(400).json({
 			status: 'failed',
-			message: 'Name, email, and desc are required fields',
+			message: 'Name, email, phone and desc are required fields',
 		})
 	}
 })
