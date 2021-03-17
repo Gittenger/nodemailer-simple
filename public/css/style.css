@@ -1,0 +1,33 @@
+html {
+  --color-main-dark: #012a4a;
+  --color-main: #013a63;
+  --color-main-light: #468faf;
+  --color-white: whitesmoke;
+}
+
+.dark {
+  background: var(--color-main-dark);
+  color: var(--color-white);
+}
+
+.light {
+  background: var(--color-white);
+  color: var(--color-main-dark);
+}
+
+.wrapper {
+  max-width: 640px;
+}
+@media only screen and (max-width: 575px) {
+  .wrapper {
+    width: 98vw;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .outer-row {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}

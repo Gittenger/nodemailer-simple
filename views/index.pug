@@ -1,0 +1,28 @@
+doctype html
+html
+   block head
+      meta(charset='UTF-8')
+      meta(name='viewport' content='width=device-width, initial-scale=1.0')
+      link(rel='stylesheet' href='/css/style.css')
+      link(rel='shortcut icon' type='image/png' href='/img/favicon.png')
+      link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:300,300i,700')
+      title HELLO | #{title}
+   body.dark
+      table(class='wrapper' border='0' cellpadding='0' cellspacing='0')
+         tr(class='outer-row')
+            td(class='item-1')
+               table
+                  tr
+                     td
+                        img(src='http://placekitten.com/g/480/300')
+                  tr
+                     td
+                        h1 TABLE ITEM 1
+            td(class='item-2')
+               table
+                  tr
+                     td
+                        img(src='http://placekitten.com/g/200/300')
+                     tr
+                        td
+                           h1 TABLE ITEM 2
