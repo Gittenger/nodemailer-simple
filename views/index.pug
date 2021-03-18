@@ -5,24 +5,46 @@ html
       meta(name='viewport' content='width=device-width, initial-scale=1.0')
       link(rel='stylesheet' href='/css/style.css')
       link(rel='shortcut icon' type='image/png' href='/img/favicon.png')
-      link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:300,300i,700')
+      link(rel="preconnect" href="https://fonts.gstatic.com")
+      link(href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap" rel="stylesheet")
       title HELLO | #{title}
    body.dark
-      table(class='wrapper' border='0' cellpadding='0' cellspacing='0')
-         tr(class='outer-row')
-            td(class='item-1')
-               table
-                  tr
-                     td
-                        img(src='http://placekitten.com/g/480/300')
-                  tr
-                     td
-                        h1 TABLE ITEM 1
-            td(class='item-2')
-               table
-                  tr
-                     td
-                        img(src='http://placekitten.com/g/200/300')
+      div(class='test-container')
+         table(class='wrapper' border='0' cellpadding='0' cellspacing='0')
+            tr(class='outer-row')
+               td(class='intro')
+                  table
                      tr
                         td
-                           h1 TABLE ITEM 2
+                           p Hello #{name},
+               td(class='main-body')
+                  table
+                     tr
+                        td
+                           p Thank you for your interest in booking a gig with ____. We are thrilled you found us and we will do all we can to meet your request. Once we review the details you've sent us, one of our directors will reach out to you to further discuss the details of your booking.
+
+                           p As a friendly reminder, you haven't actually booked anything yet, but we're sending you this email to let you know we've received your request and we will be reaching out to you soon to discuss details, at which point we can officially mark our books for your event.
+
+                           p Here is the information you provided us:
+
+                           div(class='info-summary')
+                              p Name: #{name}
+                              p Email: #{email}
+                              p Phone: #{phone}
+                              p Event description:
+                              p #{desc}
+               td(class='signature')
+                  table
+                     tr
+                        td
+                           p Thank you,
+                           p _________
+               td(class='footer')
+                  table
+                     tr
+                        td
+                           img(class='logo' src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png')
+                           p Our Company Name,
+                           p 510 Main Blvd
+                           p Goshen, Lebanon 90210
+                           p 555-575-0100

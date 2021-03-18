@@ -1,8 +1,40 @@
 html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
   --color-main-dark: #012a4a;
   --color-main: #013a63;
   --color-main-light: #468faf;
   --color-white: whitesmoke;
+}
+
+body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6em;
+  font-family: "Karla", sans-serif;
+}
+
+.test-container {
+  width: 100%;
+  max-width: 1080px;
 }
 
 .dark {
@@ -16,18 +48,41 @@ html {
 }
 
 .wrapper {
-  max-width: 640px;
+  max-width: 840px;
+  padding: 1.5rem;
 }
 @media only screen and (max-width: 575px) {
   .wrapper {
-    width: 98vw;
+    width: 100%;
   }
 }
 
-@media only screen and (max-width: 575px) {
-  .outer-row {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr;
-  }
+.outer-row {
+  width: 100%;
+}
+.outer-row > td {
+  display: block;
+}
+
+.intro {
+  margin-top: 3rem;
+}
+
+.main-body {
+  margin-top: 1.7rem;
+  margin-bottom: 2rem;
+}
+.main-body p {
+  line-height: 1.4;
+  margin-bottom: 1.3rem;
+}
+.main-body .info-summary p {
+  margin-bottom: 0.3rem;
+}
+
+.footer {
+  margin-top: 2rem;
+}
+.footer img {
+  max-width: 100px;
 }

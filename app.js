@@ -16,6 +16,10 @@ app.get('/', async (req, res) => {
 	const vars = {
 		title: 'Home Page',
 		name: 'John',
+		email: 'john@hotmail.com',
+		phone: '123-123-1234',
+		desc:
+			'Hello, this is the event description. We would like this and we would like that. Hello. Lorem ipsum etc etc etc. Hello.',
 	}
 
 	res.render('index', vars)
