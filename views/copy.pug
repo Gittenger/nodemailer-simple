@@ -1,20 +1,24 @@
-extends base
+extends index
 
 block content
-   p Hi #{name},
-   p You sent an email to Fantastic Flames.
-   table.btn.btn-primary(role='presentation', border='0', cellpadding='0', cellspacing='0')
-      tbody
+   td(class='intro')
+         table
+            tr
+               td
+                  p Hello #{name},
+   td(class='main-body')
+      table
          tr
-            td(align='left')
-            table(role='presentation', border='0', cellpadding='0', cellspacing='0')
-               tbody
-                  tr
-                     td
-                        a(href=`${url}`, target='_blank') A Link Here if needed 
-   p Your name: #{name}
-   p Your phone: #{phone}
-   p Your email: #{email}
-   p Your event description:
-   p #{desc}
-   p Thank you.
+            td
+               p Thank you for your interest in booking a gig with ____. We are thrilled you found us and we will do all we can to meet your request. Once we review the details you've sent us, one of our directors will reach out to you to further discuss the details of your booking.
+
+               p As a friendly reminder, you haven't actually booked anything yet, but we're sending you this email to let you know we've received your request and we will be reaching out to you soon to discuss details, at which point we can officially mark our books for your event.
+
+               p Here is the information you provided us:
+
+               div(class='info-summary')
+                  p Name: #{name}
+                  p Email: #{email}
+                  p Phone: #{phone}
+                  p Event description:
+                  p #{desc}

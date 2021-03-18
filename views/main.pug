@@ -1,20 +1,22 @@
-extends base
+extends index
 
 block content
-   p Hi Camden,
-   p You have a new email from a client. 
-   table.btn.btn-primary(role='presentation', border='0', cellpadding='0', cellspacing='0')
-      tbody
+   td(class='intro')
+         table
+            tr
+               td
+                  p Hello ____,
+   td(class='main-body')
+      table
          tr
-            td(align='left')
-            table(role='presentation', border='0', cellpadding='0', cellspacing='0')
-               tbody
-                  tr
-                     td
-                        a(href=`${url}`, target='_blank') A Link Here if needed 
-   p Customer name: #{name}
-   p Customer phone: #{phone}
-   p Customer email: #{email}
-   p Event description:
-   p #{desc}
-   p - Fantastic Flames
+            td
+               p You have received a new inquiry from a client about booking for an event with ____. 
+
+               p Here is the information the client provided you:
+
+               div(class='info-summary')
+                  p Name: #{name}
+                  p Email: #{email}
+                  p Phone: #{phone}
+                  p Event description:
+                  p #{desc}

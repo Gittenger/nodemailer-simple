@@ -22,7 +22,7 @@ app.get('/', async (req, res) => {
 			'Hello, this is the event description. We would like this and we would like that. Hello. Lorem ipsum etc etc etc. Hello.',
 	}
 
-	res.render('index', vars)
+	res.render('main', vars)
 })
 
 // app.post('/sendEmail', async (req, res) => {
